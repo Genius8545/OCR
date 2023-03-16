@@ -1,5 +1,5 @@
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+// const dotenv = require("dotenv");
+// dotenv.config({ path: "./config.env" });
 
 const form = document.querySelector("#image-form");
 const resultDiv = document.querySelector("#result");
