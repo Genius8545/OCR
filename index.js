@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
+console.log(process.env.API_KEY);
 const form = document.querySelector("#image-form");
 const resultDiv = document.querySelector("#result");
 
@@ -9,6 +12,9 @@ form.addEventListener("submit", async (e) => {
     const res = await fetch("https://excited-bee-buckle.cyclic.app/ocr", {
       method: "POST",
       body: formData,
+      headers: {
+        "x-api-key": process.env.API_KEY,
+      },
     });
     const data = await res.json();
     console.log(data);
