@@ -13,7 +13,7 @@ form.addEventListener("submit", async (e) => {
       method: "POST",
       body: formData,
       headers: {
-        'x-api-key': process.env.API_KEY,
+        'x-api-key': '52fe4821-c727-4a1f-ab41-8742117e73d4',
       },
     });
     const data = await res.json();
