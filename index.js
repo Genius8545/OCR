@@ -1,8 +1,15 @@
+document.querySelector("#image-input").onchange = function() {
+  document.querySelector("form p").style.display = "block";
+}
+
+let loading = document.querySelector("form div");
+
 const form = document.querySelector("#image-form");
 const resultDiv = document.querySelector("#result");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  loading.style.display = "block";
   const formData = new FormData();
   formData.append("image", form.elements.image.files[0]);
   try {
@@ -10,6 +17,7 @@ form.addEventListener("submit", async (e) => {
       method: "POST",
       body: formData,
     });
+    loading.style.display = "none";
     const data = await res.json();
     console.log(data);
     resultDiv.textContent = data.ocrResult;
