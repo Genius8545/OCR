@@ -20,6 +20,7 @@ form.addEventListener("submit", async (e) => {
     loading.style.display = "none";
     const data = await res.json();
     console.log(data);
+    console.log(data.ocrResult.split("\n"));
     resultDiv.textContent = data.ocrResult;
   } catch (err) {
     console.error(err);
